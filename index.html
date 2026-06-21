@@ -88,6 +88,10 @@ section{position:relative;z-index:1;padding:90px 6%}
 .form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-m)}
 .form-group textarea{height:120px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.btn-primary:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+.form-status{margin-top:0.9rem;font-size:0.86rem;line-height:1.6;border-radius:8px;padding:0;min-height:0;opacity:0;transition:opacity 0.25s,padding 0.25s}
+.form-status.success{color:#3F6B3F;background:rgba(63,107,63,0.1);border:1px solid rgba(63,107,63,0.25);padding:11px 14px;opacity:1}
+.form-status.error{color:#9B4444;background:rgba(155,68,68,0.1);border:1px solid rgba(155,68,68,0.25);padding:11px 14px;opacity:1}
 .contact-info-title{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;color:var(--text-h);margin-bottom:1.8rem}
 .contact-item{display:flex;align-items:flex-start;gap:13px;margin-bottom:1.4rem}
 .contact-item-icon{width:38px;height:38px;background:rgba(124,82,53,0.1);border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
@@ -341,25 +345,30 @@ section{position:relative;z-index:1;padding:90px 6%}
       <h2 class="section-title" data-i18n="contact_title">Contact Us</h2>
       <div class="divider-line"></div>
       <p style="font-size:0.9rem;color:var(--text-b);margin-bottom:1.8rem" data-i18n="contact_sub">Feel free to contact us any time. We will get back to you as soon as we can!</p>
-      <div class="form-grid">
-        <div class="form-group">
-          <label data-i18n="form_name">Name</label>
-          <input type="text" data-i18n-ph="ph_name" placeholder="Your name">
+      <form id="contactForm" class="contact-form" action="https://formspree.io/f/xojoaoek" method="POST">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="New message from Noesis Analysis website">
+        <div class="form-grid">
+          <div class="form-group">
+            <label data-i18n="form_name">Name</label>
+            <input type="text" name="name" required data-i18n-ph="ph_name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label data-i18n="form_email">Email</label>
+            <input type="email" name="email" required data-i18n-ph="ph_email" placeholder="your@email.com">
+          </div>
         </div>
         <div class="form-group">
-          <label data-i18n="form_email">Email</label>
-          <input type="email" data-i18n-ph="ph_email" placeholder="your@email.com">
+          <label data-i18n="form_subject">Subject</label>
+          <input type="text" name="subject" data-i18n-ph="ph_subject" placeholder="How can we help?">
         </div>
-      </div>
-      <div class="form-group">
-        <label data-i18n="form_subject">Subject</label>
-        <input type="text" data-i18n-ph="ph_subject" placeholder="How can we help?">
-      </div>
-      <div class="form-group">
-        <label data-i18n="form_message">Message</label>
-        <textarea data-i18n-ph="ph_message" placeholder="Tell us about your needs..."></textarea>
-      </div>
-      <button class="btn-primary" style="width:100%;justify-content:center" data-i18n="form_send">Send Message</button>
+        <div class="form-group">
+          <label data-i18n="form_message">Message</label>
+          <textarea name="message" required data-i18n-ph="ph_message" placeholder="Tell us about your needs..."></textarea>
+        </div>
+        <button type="submit" id="contactSubmit" class="btn-primary" style="width:100%;justify-content:center" data-i18n="form_send">Send Message</button>
+        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+      </form>
     </div>
     <div>
       <p class="contact-info-title" data-i18n="ci_title">Contact Info</p>
@@ -401,6 +410,7 @@ section{position:relative;z-index:1;padding:90px 6%}
 
 <script>
 // ── I18N ──────────────────────────────────────────────────────
+let currentLang='en';
 const i18n = {
   en:{
     nav_home:'Home',nav_about:'About Us',nav_services:'Services',nav_contact:'Contact Us',
@@ -428,6 +438,9 @@ const i18n = {
     ph_name:'Your name',ph_email:'your@email.com',ph_subject:'How can we help?',ph_message:'Tell us about your needs...',
     ci_title:'Contact Info',ci_phone_l:'Phone',ci_email_l:'Email',ci_loc_l:'Location',
     ci_note:'All communication is handled with strict confidentiality and discretion.',
+    form_sending:'Sending...',
+    form_success:'Thank you. Your message has been sent successfully — we will get back to you shortly.',
+    form_error:'Something went wrong. Please try again or contact us directly by email.',
     lang_label:'English',lang_flag:'https://noesis-analysis.vercel.app/flags/en.png'
   },
   es:{
@@ -456,6 +469,9 @@ const i18n = {
     ph_name:'Su nombre',ph_email:'su@correo.com',ph_subject:'¿Cómo podemos ayudarle?',ph_message:'Cuéntenos sobre sus necesidades...',
     ci_title:'Información de Contacto',ci_phone_l:'Teléfono',ci_email_l:'Correo',ci_loc_l:'Ubicación',
     ci_note:'Toda comunicación se maneja con estricta confidencialidad y discreción.',
+    form_sending:'Enviando...',
+    form_success:'Gracias. Su mensaje fue enviado correctamente — nos pondremos en contacto a la brevedad.',
+    form_error:'Ocurrió un error. Por favor intente nuevamente o escríbanos directamente por correo.',
     lang_label:'Español',lang_flag:'https://noesis-analysis.vercel.app/flags/es.png'
   },
   it:{
@@ -484,12 +500,16 @@ const i18n = {
     ph_name:'Il tuo nome',ph_email:'tua@email.com',ph_subject:'Come possiamo aiutarti?',ph_message:'Raccontaci le tue esigenze...',
     ci_title:'Informazioni di Contatto',ci_phone_l:'Telefono',ci_email_l:'Email',ci_loc_l:'Posizione',
     ci_note:'Tutta la comunicazione è gestita con rigorosa riservatezza e discrezione.',
+    form_sending:'Invio in corso...',
+    form_success:'Grazie. Il tuo messaggio è stato inviato con successo — ti risponderemo a breve.',
+    form_error:'Si è verificato un errore. Riprova oppure scrivici direttamente via email.',
     lang_label:'Italiano',lang_flag:'https://noesis-analysis.vercel.app/flags/it.png'
   }
 };
 
 function setLang(l){
   const t=i18n[l];
+  currentLang=l;
   document.documentElement.lang=l;
   document.getElementById('langLabel').textContent=t.lang_label;
   document.getElementById('langFlag').src=t.lang_flag;
@@ -573,6 +593,45 @@ document.addEventListener('click',function(e){
   window.addEventListener('touchmove',e=>{if(e.touches[0]){mouse.x=e.touches[0].clientX;mouse.y=e.touches[0].clientY}},{passive:true});
   window.addEventListener('resize',resize);
   resize();draw();
+})();
+
+// ── CONTACT FORM (Formspree) ──────────────────────────────────
+(function(){
+  const form=document.getElementById('contactForm');
+  const status=document.getElementById('formStatus');
+  const btn=document.getElementById('contactSubmit');
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const t=i18n[currentLang];
+    btn.disabled=true;
+    const restingLabel=t.form_send;
+    btn.textContent=t.form_sending;
+    status.className='form-status';
+    status.textContent='';
+
+    try{
+      const res=await fetch(form.action,{
+        method:'POST',
+        body:new FormData(form),
+        headers:{'Accept':'application/json'}
+      });
+      if(res.ok){
+        status.textContent=t.form_success;
+        status.className='form-status success';
+        form.reset();
+      }else{
+        status.textContent=t.form_error;
+        status.className='form-status error';
+      }
+    }catch(err){
+      status.textContent=t.form_error;
+      status.className='form-status error';
+    }finally{
+      btn.disabled=false;
+      btn.textContent=restingLabel;
+    }
+  });
 })();
 
 // ── SMOOTH SCROLL ─────────────────────────────────────────────
