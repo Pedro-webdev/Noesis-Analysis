@@ -1,11 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Noesis Analysis</title>
+<title>Noesis Analysis | Análisis de Riesgos e Inteligencia Aplicada</title>
+<meta name="description" content="Noesis Analysis es una consultora especializada en análisis geopolítico estratégico de entornos complejos, con sede en Madrid, España.">
+<link rel="canonical" href="https://noesisanalysis.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Noesis Analysis">
+<meta property="og:title" content="Noesis Analysis | Análisis de Riesgos e Inteligencia Aplicada">
+<meta property="og:description" content="Consultora especializada en análisis geopolítico estratégico de entornos complejos, con sede en Madrid, España.">
+<meta property="og:url" content="https://noesisanalysis.com/">
+<meta property="og:image" content="https://noesisanalysis.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Noesis Analysis — Análisis de Riesgos e Inteligencia Aplicada">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="it_IT">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Noesis Analysis | Análisis de Riesgos e Inteligencia Aplicada">
+<meta name="twitter:description" content="Consultora especializada en análisis geopolítico estratégico de entornos complejos, con sede en Madrid, España.">
+<meta name="twitter:image" content="https://noesisanalysis.com/og-image.png">
+
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Noesis Analysis",
+  "inLanguage": "es",
+  "description": "Consultora independiente de análisis geopolítico estratégico, evaluación de riesgos e inteligencia aplicada.",
+  "url": "https://noesisanalysis.com/",
+  "telephone": "+34657164489",
+  "email": "lab@noesisanalysis.com",
+  "areaServed": "Worldwide",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Madrid",
+    "addressCountry": "ES"
+  }
+}
+</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -101,6 +141,15 @@ section{position:relative;z-index:1;padding:90px 6%}
 .contact-sep{width:100%;height:1px;background:var(--border);margin:1.6rem 0}
 .contact-note{font-size:0.8rem;color:var(--text-m);line-height:1.6}
 
+/* TEAM */
+#team{background:rgba(237,231,217,0.85);text-align:center}
+.team-inner{max-width:740px;margin:0 auto}
+.team-inner p{font-size:0.95rem;color:var(--text-b);margin-bottom:1.1rem;line-height:1.8}
+
+/* CLAIM BAND */
+.claim-band{position:relative;z-index:1;padding:64px 6%;text-align:center;background:var(--cream-d);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.claim-text{max-width:740px;margin:0 auto;font-family:'Space Grotesk',sans-serif;font-style:italic;font-weight:700;font-size:clamp(1.15rem,2.6vw,1.55rem);color:var(--text-h);line-height:1.55}
+
 /* WHATSAPP */
 .whatsapp-fab{position:fixed;bottom:28px;right:28px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,0.35);z-index:999;transition:transform 0.2s}
 .whatsapp-fab:hover{transform:scale(1.08)}
@@ -140,25 +189,26 @@ section{position:relative;z-index:1;padding:90px 6%}
     <span class="nav-logo-text">Noesis Analysis</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#home" data-i18n="nav_home">Home</a></li>
-    <li><a href="#about" data-i18n="nav_about">About Us</a></li>
-    <li><a href="#services" data-i18n="nav_services">Services</a></li>
-    <li><a href="#contact" data-i18n="nav_contact">Contact Us</a></li>
+    <li><a href="#home" data-i18n="nav_home">Inicio</a></li>
+    <li><a href="#about" data-i18n="nav_about">Sobre Nosotros</a></li>
+    <li><a href="#team" data-i18n="nav_team">Equipo</a></li>
+    <li><a href="#services" data-i18n="nav_services">Servicios</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contáctenos</a></li>
   </ul>
   <div class="lang-switcher">
     <button class="lang-btn" onclick="toggleLang()">
-      <img id="langFlag" src="https://noesis-analysis.vercel.app/flags/en.png" class="flag" alt="">
-      <span id="langLabel">English</span> ▾
+      <img id="langFlag" src="flags/es.png" class="flag" alt="">
+      <span id="langLabel">Español</span> ▾
     </button>
     <div class="lang-dropdown" id="langDropdown">
       <a href="#" onclick="setLang('en');return false">
-        <img src="https://noesis-analysis.vercel.app/flags/en.png" class="flag" alt="EN"> English
+        <img src="flags/en.png" class="flag" alt="EN"> English
       </a>
       <a href="#" onclick="setLang('es');return false">
-        <img src="https://noesis-analysis.vercel.app/flags/es.png" class="flag" alt="ES"> Español
+        <img src="flags/es.png" class="flag" alt="ES"> Español
       </a>
       <a href="#" onclick="setLang('it');return false">
-        <img src="https://noesis-analysis.vercel.app/flags/it.png" class="flag" alt="IT"> Italiano
+        <img src="flags/it.png" class="flag" alt="IT"> Italiano
       </a>
     </div>
   </div>
@@ -168,13 +218,13 @@ section{position:relative;z-index:1;padding:90px 6%}
 <section id="home">
   <div class="hero-grid">
     <div class="hero-content">
-      <div class="hero-eyebrow anim d1" data-i18n="hero_eyebrow">Risk Analysis &amp; Applied Intelligence</div>
+      <div class="hero-eyebrow anim d1" data-i18n="hero_eyebrow">Análisis de Riesgos e Inteligencia Aplicada</div>
       <h1 class="hero-title anim d2">Noesis<br><span>Analysis</span></h1>
-      <p class="hero-sub anim d3" data-i18n="hero_sub">Applied intelligence for risk management,<br>scenario analysis, and decision-making</p>
-      <a href="#contact" class="btn-primary anim d4" data-i18n="hero_cta">Let's talk</a>
+      <p class="hero-sub anim d3" data-i18n="hero_sub">Inteligencia aplicada para la gestión de riesgos,<br>análisis de escenarios y toma de decisiones</p>
+      <a href="#contact" class="btn-primary anim d4" data-i18n="hero_cta">Hablemos</a>
     </div>
     <div class="hero-image anim d3">
-      <img src="world-map.svg" alt="World map">
+      <img src="world-map.webp" alt="World map">
     </div>
   </div>
 </section>
@@ -183,66 +233,86 @@ section{position:relative;z-index:1;padding:90px 6%}
 <section id="about">
   <div class="about-inner">
     <div class="about-img-wrap">
-      <img src="https://noesis-analysis.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout3.0qgd7o9k7hgf7.jpg&w=3840&q=75"
+      <img src="about3.webp"
            alt="About Noesis Analysis"
            onerror="this.style.display='none';this.parentElement.style.background='var(--cream-d)'">
     </div>
     <div class="about-text">
-      <h2 class="section-title" data-i18n="about_title">About Us</h2>
+      <h2 class="section-title" data-i18n="about_title">Sobre Nosotros</h2>
       <div class="divider-line"></div>
-      <p data-i18n="about_p1">Noesis Analysis is an independent consultancy dedicated to producing applied intelligence in contexts where uncertainty poses an operational, reputational or institutional risk.</p>
-      <p data-i18n="about_p2">Our approach combines political analysis, security assessment and scenario building, with the aim of providing public and private clients with tools to anticipate risks, understand complex dynamics and act with greater predictability.</p>
-      <p data-i18n="about_p3">We work according to criteria of analytical neutrality, methodological rigour and practical orientation:</p>
-      <ul class="about-list">
-        <li data-i18n="about_li1">The work carried out by Noesis Analysis is conducted under strict standards of discretion and confidentiality.</li>
-        <li data-i18n="about_li2">Information provided by clients is treated confidentially.</li>
-        <li data-i18n="about_li3">Reports are prepared in accordance with professional standards, with a preventive approach and analytical neutrality.</li>
-      </ul>
+      <p data-i18n="about_p1">Noesis Analysis es una consultora especializada en análisis geopolítico estratégico de entornos complejos. Nuestro enfoque parte de una convicción central: la calidad de una decisión depende de la calidad del análisis que la precede.</p>
+      <p data-i18n="about_p2">Trabajamos con técnicas estructuradas de análisis, criterios de validación y una mirada integral que permite organizar información dispersa, identificar riesgos y anticipar escenarios.</p>
+      <p data-i18n="about_p3">Nuestro diferencial no es producir informes, sino construir análisis útiles para la toma de decisión de nuestros clientes. Integramos rigor conceptual, experiencia aplicada y capacidad de adaptación a distintos contextos, regiones y sectores.</p>
+      <p data-i18n="about_p4">En entornos complejos, la información es abundante, pero el conocimiento útil es escaso.</p>
     </div>
   </div>
 </section>
 
+<!-- CLAIM 1 -->
+<div class="claim-band">
+  <p class="claim-text" data-i18n="claim1">La información por sí sola no alcanza: hace falta interpretarla, jerarquizarla y convertirla en decisiones.</p>
+</div>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="team-inner">
+    <h2 class="section-title" data-i18n="team_title">Equipo</h2>
+    <div class="divider-line" style="margin-left:auto;margin-right:auto"></div>
+    <p data-i18n="team_p1">Somos un equipo de profesionales de las ciencias políticas, relaciones internacionales, analistas de inteligencia, ciberseguridad, economía y derecho que nos permite realizar un análisis integral.</p>
+    <p data-i18n="team_p2">Los analistas de Noesis Analysis aportamos método, criterio y capacidad de síntesis para convertir información relevante en decisiones estratégicas.</p>
+  </div>
+</section>
+
+<!-- CLAIM 2 -->
+<div class="claim-band">
+  <p class="claim-text" data-i18n="claim2">Analizamos para comprender. Comprendemos para decidir.</p>
+</div>
+
 <!-- SERVICES -->
 <section id="services">
   <div class="services-inner">
-    <h2 class="svc-big-title" data-i18n="svc_title">Services</h2>
-    <p class="svc-subtitle" data-i18n="svc_sub">Noesis Analysis offers applied intelligence solutions focused on risk prevention, monitoring critical variables, and building scenarios for strategic and operational decision-making.</p>
+    <h2 class="svc-big-title" data-i18n="svc_title">Servicios</h2>
+    <p class="svc-subtitle" data-i18n="svc_sub">Asesoramos a instituciones, empresas, organizaciones, equipos directivos y decisores a comprender contextos complejos e identificar variables críticas. En Noesis Analysis brindamos los siguientes servicios:</p>
     <div class="services-grid">
 
-      <!-- GLOBE -->
+      <!-- BUILDING -->
       <div class="service-col">
         <div class="svc-illus">
-          <svg viewBox="0 0 240 230" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs><clipPath id="gc"><circle cx="120" cy="106" r="90"/></clipPath></defs>
-            <circle cx="120" cy="106" r="90" stroke="#8B7565" stroke-width="1.1" fill="#F0EBE0"/>
-            <g clip-path="url(#gc)" stroke="#8B7565" fill="none">
-              <ellipse cx="120" cy="106" rx="90" ry="13" stroke-width="0.7"/>
-              <ellipse cx="120" cy="80" rx="78" ry="11" stroke-width="0.6"/>
-              <ellipse cx="120" cy="132" rx="78" ry="11" stroke-width="0.6"/>
-              <ellipse cx="120" cy="56" rx="50" ry="8" stroke-width="0.55"/>
-              <ellipse cx="120" cy="156" rx="50" ry="8" stroke-width="0.55"/>
-              <ellipse cx="120" cy="36" rx="22" ry="5" stroke-width="0.45"/>
-              <ellipse cx="120" cy="176" rx="22" ry="5" stroke-width="0.45"/>
-              <ellipse cx="120" cy="106" rx="5" ry="90" stroke-width="0.6"/>
-              <ellipse cx="120" cy="106" rx="26" ry="90" stroke-width="0.55"/>
-              <ellipse cx="120" cy="106" rx="54" ry="90" stroke-width="0.55"/>
-              <ellipse cx="120" cy="106" rx="78" ry="90" stroke-width="0.5"/>
-              <path d="M42,48 Q60,34 78,40 Q94,48 92,68 Q90,90 76,96 Q60,99 48,86 Q36,72 42,48Z" fill="#DDD5C3" stroke-width="0.5"/>
-              <path d="M72,118 Q86,110 96,120 Q104,136 98,160 Q90,175 78,172 Q64,166 60,148 Q58,130 72,118Z" fill="#DDD5C3" stroke-width="0.5"/>
-              <path d="M112,44 Q126,36 138,46 Q146,58 140,70 Q130,78 118,74 Q108,66 112,44Z" fill="#DDD5C3" stroke-width="0.5"/>
-              <path d="M110,78 Q128,72 140,84 Q150,104 144,130 Q136,148 122,150 Q106,146 100,126 Q96,104 110,78Z" fill="#DDD5C3" stroke-width="0.5"/>
-              <path d="M144,40 Q170,28 200,40 Q215,54 212,78 Q202,98 178,104 Q156,108 142,96 Q128,80 144,40Z" fill="#DDD5C3" stroke-width="0.5"/>
-              <path d="M170,126 Q192,116 208,128 Q218,148 210,166 Q198,178 182,174 Q164,168 160,150 Q156,132 170,126Z" fill="#DDD5C3" stroke-width="0.5"/>
-            </g>
-            <ellipse cx="120" cy="106" rx="102" ry="22" stroke="#8B7565" stroke-width="0.8"/>
-            <line x1="82" y1="193" x2="120" y2="198" stroke="#8B7565" stroke-width="1" stroke-linecap="round"/>
-            <line x1="158" y1="193" x2="120" y2="198" stroke="#8B7565" stroke-width="1" stroke-linecap="round"/>
-            <ellipse cx="120" cy="202" rx="34" ry="8" stroke="#8B7565" stroke-width="1" fill="#E5DFD3"/>
-            <ellipse cx="120" cy="202" rx="26" ry="5.5" stroke="#8B7565" stroke-width="0.6"/>
+          <svg viewBox="0 0 240 238" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="40" y="206" width="160" height="8" stroke="#8B7565" stroke-width="0.7" fill="#E5DFD3"/>
+            <rect x="30" y="214" width="180" height="7" stroke="#8B7565" stroke-width="0.7" fill="#DDD8CE"/>
+            <rect x="20" y="221" width="200" height="7" stroke="#8B7565" stroke-width="0.7" fill="#D4CEC4"/>
+            <rect x="28" y="60" width="184" height="146" stroke="#8B7565" stroke-width="1.1" fill="#F0EBE0"/>
+            <rect x="20" y="50" width="200" height="12" stroke="#8B7565" stroke-width="0.8" fill="#E5DFD3"/>
+            <rect x="12" y="38" width="216" height="14" stroke="#8B7565" stroke-width="0.8" fill="#DDD8CE"/>
+            <line x1="28"  y1="112" x2="212" y2="112" stroke="#8B7565" stroke-width="0.6"/>
+            <line x1="28"  y1="160" x2="212" y2="160" stroke="#8B7565" stroke-width="0.6"/>
+            <line x1="62"  y1="60" x2="62"  y2="206" stroke="#8B7565" stroke-width="0.75"/>
+            <line x1="96"  y1="60" x2="96"  y2="206" stroke="#8B7565" stroke-width="0.75"/>
+            <line x1="130" y1="60" x2="130" y2="206" stroke="#8B7565" stroke-width="0.75"/>
+            <line x1="164" y1="60" x2="164" y2="206" stroke="#8B7565" stroke-width="0.75"/>
+            <line x1="198" y1="60" x2="198" y2="206" stroke="#8B7565" stroke-width="0.75"/>
+            <rect x="34"  y="70" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="68"  y="70" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="102" y="70" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="136" y="70" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="170" y="70" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="34"  y="120" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="68"  y="120" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="102" y="120" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="170" y="120" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="136" y="120" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="34"  y="168" width="22" height="30" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="68"  y="168" width="22" height="30" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="170" y="168" width="22" height="30" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="136" y="168" width="22" height="30" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
+            <rect x="104" y="160" width="42" height="46" stroke="#8B7565" stroke-width="0.9" fill="#C8C0B0"/>
+            <line x1="125" y1="160" x2="125" y2="206" stroke="#8B7565" stroke-width="0.5"/>
+            <rect x="104" y="160" width="42" height="18" stroke="#8B7565" stroke-width="0.5" fill="none"/>
           </svg>
         </div>
-        <div class="service-col-name" data-i18n="svc1_name">Country Risk for Travel and Operations</div>
-        <p class="service-col-desc" data-i18n="svc1_desc">Assessment of security, stability, and scenarios for international mobility and overseas operations.</p>
+        <div class="service-col-name" data-i18n="svc1_name">Seguridad Física y Digital para Instituciones y Empresas</div>
+        <p class="service-col-desc" data-i18n="svc1_desc">Evaluación de amenazas y vulnerabilidades en instalaciones, procesos y personal, tanto físicas como digitales y cibernéticas.</p>
       </div>
 
       <!-- NETWORK -->
@@ -290,48 +360,44 @@ section{position:relative;z-index:1;padding:90px 6%}
             <path d="M97,114 Q115,106 133,114" stroke="#8B7565" stroke-width="1"/>
           </svg>
         </div>
-        <div class="service-col-name" data-i18n="svc2_name">Applied Intelligence in Electoral and Campaign Processes</div>
-        <p class="service-col-desc" data-i18n="svc2_desc">Political monitoring, analysis of actors, narratives, and risks.</p>
+        <div class="service-col-name" data-i18n="svc2_name">Inteligencia Aplicada a Procesos Políticos y Electorales</div>
+        <p class="service-col-desc" data-i18n="svc2_desc">Monitoreo político, análisis de actores, narrativas y riesgos.</p>
       </div>
 
-      <!-- BUILDING -->
+      <!-- GLOBE -->
       <div class="service-col">
         <div class="svc-illus">
-          <svg viewBox="0 0 240 238" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="40" y="206" width="160" height="8" stroke="#8B7565" stroke-width="0.7" fill="#E5DFD3"/>
-            <rect x="30" y="214" width="180" height="7" stroke="#8B7565" stroke-width="0.7" fill="#DDD8CE"/>
-            <rect x="20" y="221" width="200" height="7" stroke="#8B7565" stroke-width="0.7" fill="#D4CEC4"/>
-            <rect x="28" y="60" width="184" height="146" stroke="#8B7565" stroke-width="1.1" fill="#F0EBE0"/>
-            <rect x="20" y="50" width="200" height="12" stroke="#8B7565" stroke-width="0.8" fill="#E5DFD3"/>
-            <rect x="12" y="38" width="216" height="14" stroke="#8B7565" stroke-width="0.8" fill="#DDD8CE"/>
-            <line x1="28"  y1="112" x2="212" y2="112" stroke="#8B7565" stroke-width="0.6"/>
-            <line x1="28"  y1="160" x2="212" y2="160" stroke="#8B7565" stroke-width="0.6"/>
-            <line x1="62"  y1="60" x2="62"  y2="206" stroke="#8B7565" stroke-width="0.75"/>
-            <line x1="96"  y1="60" x2="96"  y2="206" stroke="#8B7565" stroke-width="0.75"/>
-            <line x1="130" y1="60" x2="130" y2="206" stroke="#8B7565" stroke-width="0.75"/>
-            <line x1="164" y1="60" x2="164" y2="206" stroke="#8B7565" stroke-width="0.75"/>
-            <line x1="198" y1="60" x2="198" y2="206" stroke="#8B7565" stroke-width="0.75"/>
-            <rect x="34"  y="70" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="68"  y="70" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="102" y="70" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="136" y="70" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="170" y="70" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="34"  y="120" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="68"  y="120" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="102" y="120" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="170" y="120" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="136" y="120" width="22" height="26" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="34"  y="168" width="22" height="30" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="68"  y="168" width="22" height="30" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="170" y="168" width="22" height="30" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="136" y="168" width="22" height="30" stroke="#8B7565" stroke-width="0.65" fill="#DDD8CE"/>
-            <rect x="104" y="160" width="42" height="46" stroke="#8B7565" stroke-width="0.9" fill="#C8C0B0"/>
-            <line x1="125" y1="160" x2="125" y2="206" stroke="#8B7565" stroke-width="0.5"/>
-            <rect x="104" y="160" width="42" height="18" stroke="#8B7565" stroke-width="0.5" fill="none"/>
+          <svg viewBox="0 0 240 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs><clipPath id="gc"><circle cx="120" cy="106" r="90"/></clipPath></defs>
+            <circle cx="120" cy="106" r="90" stroke="#8B7565" stroke-width="1.1" fill="#F0EBE0"/>
+            <g clip-path="url(#gc)" stroke="#8B7565" fill="none">
+              <ellipse cx="120" cy="106" rx="90" ry="13" stroke-width="0.7"/>
+              <ellipse cx="120" cy="80" rx="78" ry="11" stroke-width="0.6"/>
+              <ellipse cx="120" cy="132" rx="78" ry="11" stroke-width="0.6"/>
+              <ellipse cx="120" cy="56" rx="50" ry="8" stroke-width="0.55"/>
+              <ellipse cx="120" cy="156" rx="50" ry="8" stroke-width="0.55"/>
+              <ellipse cx="120" cy="36" rx="22" ry="5" stroke-width="0.45"/>
+              <ellipse cx="120" cy="176" rx="22" ry="5" stroke-width="0.45"/>
+              <ellipse cx="120" cy="106" rx="5" ry="90" stroke-width="0.6"/>
+              <ellipse cx="120" cy="106" rx="26" ry="90" stroke-width="0.55"/>
+              <ellipse cx="120" cy="106" rx="54" ry="90" stroke-width="0.55"/>
+              <ellipse cx="120" cy="106" rx="78" ry="90" stroke-width="0.5"/>
+              <path d="M42,48 Q60,34 78,40 Q94,48 92,68 Q90,90 76,96 Q60,99 48,86 Q36,72 42,48Z" fill="#DDD5C3" stroke-width="0.5"/>
+              <path d="M72,118 Q86,110 96,120 Q104,136 98,160 Q90,175 78,172 Q64,166 60,148 Q58,130 72,118Z" fill="#DDD5C3" stroke-width="0.5"/>
+              <path d="M112,44 Q126,36 138,46 Q146,58 140,70 Q130,78 118,74 Q108,66 112,44Z" fill="#DDD5C3" stroke-width="0.5"/>
+              <path d="M110,78 Q128,72 140,84 Q150,104 144,130 Q136,148 122,150 Q106,146 100,126 Q96,104 110,78Z" fill="#DDD5C3" stroke-width="0.5"/>
+              <path d="M144,40 Q170,28 200,40 Q215,54 212,78 Q202,98 178,104 Q156,108 142,96 Q128,80 144,40Z" fill="#DDD5C3" stroke-width="0.5"/>
+              <path d="M170,126 Q192,116 208,128 Q218,148 210,166 Q198,178 182,174 Q164,168 160,150 Q156,132 170,126Z" fill="#DDD5C3" stroke-width="0.5"/>
+            </g>
+            <ellipse cx="120" cy="106" rx="102" ry="22" stroke="#8B7565" stroke-width="0.8"/>
+            <line x1="82" y1="193" x2="120" y2="198" stroke="#8B7565" stroke-width="1" stroke-linecap="round"/>
+            <line x1="158" y1="193" x2="120" y2="198" stroke="#8B7565" stroke-width="1" stroke-linecap="round"/>
+            <ellipse cx="120" cy="202" rx="34" ry="8" stroke="#8B7565" stroke-width="1" fill="#E5DFD3"/>
+            <ellipse cx="120" cy="202" rx="26" ry="5.5" stroke="#8B7565" stroke-width="0.6"/>
           </svg>
         </div>
-        <div class="service-col-name" data-i18n="svc3_name">Applied Intelligence for Institutional Security</div>
-        <p class="service-col-desc" data-i18n="svc3_desc">Assessment of physical threats and vulnerabilities in organizations.</p>
+        <div class="service-col-name" data-i18n="svc3_name">Análisis de Riesgos para Viajes y Operaciones</div>
+        <p class="service-col-desc" data-i18n="svc3_desc">Evaluación de seguridad para la movilidad internacional y operaciones en el exterior.</p>
       </div>
 
     </div>
@@ -342,42 +408,42 @@ section{position:relative;z-index:1;padding:90px 6%}
 <section id="contact">
   <div class="contact-inner">
     <div>
-      <h2 class="section-title" data-i18n="contact_title">Contact Us</h2>
+      <h2 class="section-title" data-i18n="contact_title">Contacto</h2>
       <div class="divider-line"></div>
-      <p style="font-size:0.9rem;color:var(--text-b);margin-bottom:1.8rem" data-i18n="contact_sub">Feel free to contact us any time. We will get back to you as soon as we can!</p>
+      <p style="font-size:0.9rem;color:var(--text-b);margin-bottom:1.8rem" data-i18n="contact_sub">Si necesita evaluar un riesgo, analizar un escenario o preparar una decisión, escríbanos.</p>
       <form id="contactForm" class="contact-form" action="https://formspree.io/f/xojoaoek" method="POST">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <input type="hidden" name="_subject" value="New message from Noesis Analysis website">
         <div class="form-grid">
           <div class="form-group">
-            <label data-i18n="form_name">Name</label>
-            <input type="text" name="name" required data-i18n-ph="ph_name" placeholder="Your name">
+            <label data-i18n="form_name">Nombre</label>
+            <input type="text" name="name" required data-i18n-ph="ph_name" placeholder="Su nombre">
           </div>
           <div class="form-group">
-            <label data-i18n="form_email">Email</label>
-            <input type="email" name="email" required data-i18n-ph="ph_email" placeholder="your@email.com">
+            <label data-i18n="form_email">Correo electrónico</label>
+            <input type="email" name="email" required data-i18n-ph="ph_email" placeholder="su@correo.com">
           </div>
         </div>
         <div class="form-group">
-          <label data-i18n="form_subject">Subject</label>
-          <input type="text" name="subject" data-i18n-ph="ph_subject" placeholder="How can we help?">
+          <label data-i18n="form_subject">Asunto</label>
+          <input type="text" name="subject" data-i18n-ph="ph_subject" placeholder="¿Cómo podemos ayudarle?">
         </div>
         <div class="form-group">
-          <label data-i18n="form_message">Message</label>
-          <textarea name="message" required data-i18n-ph="ph_message" placeholder="Tell us about your needs..."></textarea>
+          <label data-i18n="form_message">Mensaje</label>
+          <textarea name="message" required data-i18n-ph="ph_message" placeholder="Cuéntenos sobre sus necesidades..."></textarea>
         </div>
-        <button type="submit" id="contactSubmit" class="btn-primary" style="width:100%;justify-content:center" data-i18n="form_send">Send Message</button>
+        <button type="submit" id="contactSubmit" class="btn-primary" style="width:100%;justify-content:center" data-i18n="form_send">Enviar Mensaje</button>
         <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
       </form>
     </div>
     <div>
-      <p class="contact-info-title" data-i18n="ci_title">Contact Info</p>
+      <p class="contact-info-title" data-i18n="ci_title">Información de Contacto</p>
       <div class="contact-item">
         <div class="contact-item-icon">
           <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
         </div>
         <div>
-          <div class="contact-item-label" data-i18n="ci_phone_l">Phone</div>
+          <div class="contact-item-label" data-i18n="ci_phone_l">Teléfono</div>
           <div class="contact-item-val">+34 657 164 489</div>
         </div>
       </div>
@@ -386,7 +452,7 @@ section{position:relative;z-index:1;padding:90px 6%}
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
         <div>
-          <div class="contact-item-label" data-i18n="ci_email_l">Email</div>
+          <div class="contact-item-label" data-i18n="ci_email_l">Correo</div>
           <div class="contact-item-val">lab@noesisanalysis.com</div>
         </div>
       </div>
@@ -395,7 +461,7 @@ section{position:relative;z-index:1;padding:90px 6%}
           <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <div>
-          <div class="contact-item-label" data-i18n="ci_loc_l">Location</div>
+          <div class="contact-item-label" data-i18n="ci_loc_l">Ubicación</div>
           <div class="contact-item-val">Madrid, España</div>
         </div>
       </div>
@@ -410,7 +476,7 @@ section{position:relative;z-index:1;padding:90px 6%}
 
 <script>
 // ── I18N ──────────────────────────────────────────────────────
-let currentLang='en';
+let currentLang='es';
 const i18n = {
   en:{
     nav_home:'Home',nav_about:'About Us',nav_services:'Services',nav_contact:'Contact Us',
@@ -418,22 +484,26 @@ const i18n = {
     hero_sub:'Applied intelligence for risk management,<br>scenario analysis, and decision-making',
     hero_cta:"Let's talk",
     about_label:'About Us',about_title:'About Us',
-    about_p1:'Noesis Analysis is an independent consultancy dedicated to producing applied intelligence in contexts where uncertainty poses an operational, reputational or institutional risk.',
-    about_p2:'Our approach combines political analysis, security assessment and scenario building, with the aim of providing public and private clients with tools to anticipate risks, understand complex dynamics and act with greater predictability.',
-    about_p3:'We work according to criteria of analytical neutrality, methodological rigour and practical orientation:',
-    about_li1:'The work carried out by Noesis Analysis is conducted under strict standards of discretion and confidentiality.',
-    about_li2:'Information provided by clients is treated confidentially.',
-    about_li3:'Reports are prepared in accordance with professional standards, with a preventive approach and analytical neutrality.',
+    about_p1:'Noesis Analysis is a consultancy specialized in strategic geopolitical analysis of complex environments. Our approach starts from a core conviction: the quality of a decision depends on the quality of the analysis that precedes it.',
+    about_p2:'We work with structured analytical techniques, validation criteria, and a comprehensive perspective that allows us to organize scattered information, identify risks, and anticipate scenarios.',
+    about_p3:'Our differentiator is not producing reports, but building analysis that is useful for our clients&#39; decision-making. We integrate conceptual rigor, applied experience, and the ability to adapt to different contexts, regions, and sectors.',
+    about_p4:'In complex environments, information is abundant, but useful knowledge is scarce.',
+    claim1:'Information alone is not enough: it must be interpreted, prioritized, and turned into decisions.',
+    nav_team:'Team',
+    team_title:'Team',
+    team_p1:'We are a team of professionals in political science, international relations, intelligence analysis, cybersecurity, economics, and law, which allows us to carry out comprehensive analysis.',
+    team_p2:'Noesis Analysis analysts bring method, judgment, and synthesis to turn relevant information into strategic decisions.',
+    claim2:'We analyze to understand. We understand to decide.',
     svc_title:'Services',
-    svc_sub:'Noesis Analysis offers applied intelligence solutions focused on risk prevention, monitoring critical variables, and building scenarios for strategic and operational decision-making.',
-    svc1_name:'Country Risk for Travel and Operations',
-    svc1_desc:'Assessment of security, stability, and scenarios for international mobility and overseas operations.',
+    svc_sub:'We advise institutions, companies, organizations, executive teams, and decision-makers in understanding complex contexts and identifying critical variables. At Noesis Analysis we offer the following services:',
+    svc1_name:'Physical and Digital Security for Institutions and Companies',
+    svc1_desc:'Assessment of threats and vulnerabilities in facilities, processes, and personnel &mdash; both physical and digital/cyber.',
     svc2_name:'Applied Intelligence in Electoral and Campaign Processes',
     svc2_desc:'Political monitoring, analysis of actors, narratives, and risks.',
-    svc3_name:'Applied Intelligence for Institutional Security',
-    svc3_desc:'Assessment of physical threats and vulnerabilities in organizations.',
+    svc3_name:'Risk Analysis for Travel and Operations',
+    svc3_desc:'Security assessment for international mobility and overseas operations.',
     contact_label:'Get in Touch',contact_title:'Contact Us',
-    contact_sub:'Feel free to contact us any time. We will respond as soon as possible.',
+    contact_sub:'If you need to assess a risk, analyze a scenario, or prepare a decision, write to us.',
     form_name:'Name',form_email:'Email',form_subject:'Subject',form_message:'Message',form_send:'Send Message',
     ph_name:'Your name',ph_email:'your@email.com',ph_subject:'How can we help?',ph_message:'Tell us about your needs...',
     ci_title:'Contact Info',ci_phone_l:'Phone',ci_email_l:'Email',ci_loc_l:'Location',
@@ -441,7 +511,7 @@ const i18n = {
     form_sending:'Sending...',
     form_success:'Thank you. Your message has been sent successfully — we will get back to you shortly.',
     form_error:'Something went wrong. Please try again or contact us directly by email.',
-    lang_label:'English',lang_flag:'https://noesis-analysis.vercel.app/flags/en.png'
+    lang_label:'English',lang_flag:'flags/en.png'
   },
   es:{
     nav_home:'Inicio',nav_about:'Sobre Nosotros',nav_services:'Servicios',nav_contact:'Contáctenos',
@@ -449,22 +519,26 @@ const i18n = {
     hero_sub:'Inteligencia aplicada para la gestión de riesgos,<br>análisis de escenarios y toma de decisiones',
     hero_cta:'Hablemos',
     about_label:'Sobre Nosotros',about_title:'Sobre Nosotros',
-    about_p1:'Noesis Analysis es una consultoría independiente dedicada a producir inteligencia aplicada en contextos donde la incertidumbre representa un riesgo operativo, reputacional o institucional.',
-    about_p2:'Nuestro enfoque combina análisis político, evaluación de seguridad y construcción de escenarios, con el objetivo de proporcionar a clientes públicos y privados herramientas para anticipar riesgos, comprender dinámicas complejas y actuar con mayor previsibilidad.',
-    about_p3:'Trabajamos según criterios de neutralidad analítica, rigor metodológico y orientación práctica:',
-    about_li1:'El trabajo realizado por Noesis Analysis se lleva a cabo bajo estrictos estándares de discreción y confidencialidad.',
-    about_li2:'La información proporcionada por los clientes se trata de forma confidencial.',
-    about_li3:'Los informes se elaboran según estándares profesionales, con un enfoque preventivo y neutralidad analítica.',
+    about_p1:'Noesis Analysis es una consultora especializada en análisis geopolítico estratégico de entornos complejos. Nuestro enfoque parte de una convicción central: la calidad de una decisión depende de la calidad del análisis que la precede.',
+    about_p2:'Trabajamos con técnicas estructuradas de análisis, criterios de validación y una mirada integral que permite organizar información dispersa, identificar riesgos y anticipar escenarios.',
+    about_p3:'Nuestro diferencial no es producir informes, sino construir análisis útiles para la toma de decisión de nuestros clientes. Integramos rigor conceptual, experiencia aplicada y capacidad de adaptación a distintos contextos, regiones y sectores.',
+    about_p4:'En entornos complejos, la información es abundante, pero el conocimiento útil es escaso.',
+    claim1:'La información por sí sola no alcanza: hace falta interpretarla, jerarquizarla y convertirla en decisiones.',
+    nav_team:'Equipo',
+    team_title:'Equipo',
+    team_p1:'Somos un equipo de profesionales de las ciencias políticas, relaciones internacionales, analistas de inteligencia, ciberseguridad, economía y derecho que nos permite realizar un análisis integral.',
+    team_p2:'Los analistas de Noesis Analysis aportamos método, criterio y capacidad de síntesis para convertir información relevante en decisiones estratégicas.',
+    claim2:'Analizamos para comprender. Comprendemos para decidir.',
     svc_title:'Servicios',
-    svc_sub:'Noesis Analysis ofrece soluciones de inteligencia aplicada centradas en la prevención de riesgos, el seguimiento de variables críticas y la construcción de escenarios para la toma de decisiones estratégicas y operativas.',
-    svc1_name:'Riesgo País para Viajes y Operaciones',
-    svc1_desc:'Evaluación de seguridad, estabilidad y escenarios para la movilidad internacional y las operaciones en el exterior.',
-    svc2_name:'Inteligencia Aplicada en Procesos Electorales y de Campaña',
+    svc_sub:'Asesoramos a instituciones, empresas, organizaciones, equipos directivos y decisores a comprender contextos complejos e identificar variables críticas. En Noesis Analysis brindamos los siguientes servicios:',
+    svc1_name:'Seguridad Física y Digital para Instituciones y Empresas',
+    svc1_desc:'Evaluación de amenazas y vulnerabilidades en instalaciones, procesos y personal, tanto físicas como digitales y cibernéticas.',
+    svc2_name:'Inteligencia Aplicada a Procesos Políticos y Electorales',
     svc2_desc:'Monitoreo político, análisis de actores, narrativas y riesgos.',
-    svc3_name:'Inteligencia Aplicada para la Seguridad Institucional',
-    svc3_desc:'Evaluación de amenazas físicas y vulnerabilidades en organizaciones.',
+    svc3_name:'Análisis de Riesgos para Viajes y Operaciones',
+    svc3_desc:'Evaluación de seguridad para la movilidad internacional y operaciones en el exterior.',
     contact_label:'Contáctenos',contact_title:'Contacto',
-    contact_sub:'No dude en contactarnos en cualquier momento. Responderemos a la brevedad.',
+    contact_sub:'Si necesita evaluar un riesgo, analizar un escenario o preparar una decisión, escríbanos.',
     form_name:'Nombre',form_email:'Correo electrónico',form_subject:'Asunto',form_message:'Mensaje',form_send:'Enviar Mensaje',
     ph_name:'Su nombre',ph_email:'su@correo.com',ph_subject:'¿Cómo podemos ayudarle?',ph_message:'Cuéntenos sobre sus necesidades...',
     ci_title:'Información de Contacto',ci_phone_l:'Teléfono',ci_email_l:'Correo',ci_loc_l:'Ubicación',
@@ -472,7 +546,7 @@ const i18n = {
     form_sending:'Enviando...',
     form_success:'Gracias. Su mensaje fue enviado correctamente — nos pondremos en contacto a la brevedad.',
     form_error:'Ocurrió un error. Por favor intente nuevamente o escríbanos directamente por correo.',
-    lang_label:'Español',lang_flag:'https://noesis-analysis.vercel.app/flags/es.png'
+    lang_label:'Español',lang_flag:'flags/es.png'
   },
   it:{
     nav_home:'Home',nav_about:'Chi Siamo',nav_services:'Servizi',nav_contact:'Contattaci',
@@ -480,22 +554,26 @@ const i18n = {
     hero_sub:"Intelligenza applicata per la gestione del rischio,<br>l'analisi degli scenari e il processo decisionale",
     hero_cta:'Parliamone',
     about_label:'Chi Siamo',about_title:'Chi Siamo',
-    about_p1:"Noesis Analysis è una società di consulenza indipendente dedicata alla produzione di intelligence applicata in contesti in cui l'incertezza rappresenta un rischio operativo, reputazionale o istituzionale.",
-    about_p2:"Il nostro approccio combina analisi politica, valutazione della sicurezza e costruzione di scenari, con l'obiettivo di fornire a clienti pubblici e privati strumenti per anticipare i rischi, comprendere le dinamiche complesse e agire con maggiore prevedibilità.",
-    about_p3:'Operiamo secondo criteri di neutralità analitica, rigore metodologico e orientamento pratico:',
-    about_li1:'Il lavoro svolto da Noesis Analysis è condotto secondo rigorosi standard di discrezione e riservatezza.',
-    about_li2:'Le informazioni fornite dai clienti sono trattate in modo riservato.',
-    about_li3:'I rapporti sono redatti secondo standard professionali, con un approccio preventivo e neutralità analitica.',
+    about_p1:"Noesis Analysis è una società di consulenza specializzata nell'analisi geopolitica strategica di contesti complessi. Il nostro approccio parte da una convinzione fondamentale: la qualità di una decisione dipende dalla qualità dell'analisi che la precede.",
+    about_p2:'Lavoriamo con tecniche di analisi strutturate, criteri di validazione e una visione integrale che permette di organizzare informazioni disperse, identificare rischi e anticipare scenari.',
+    about_p3:"Il nostro elemento distintivo non è produrre rapporti, ma costruire analisi utili per il processo decisionale dei nostri clienti. Integriamo rigore concettuale, esperienza applicata e capacità di adattamento a diversi contesti, regioni e settori.",
+    about_p4:"In contesti complessi, l'informazione è abbondante, ma la conoscenza utile è scarsa.",
+    claim1:"L'informazione da sola non basta: bisogna interpretarla, gerarchizzarla e trasformarla in decisioni.",
+    nav_team:'Team',
+    team_title:'Team',
+    team_p1:"Siamo un team di professionisti in scienze politiche, relazioni internazionali, analisi di intelligence, cybersicurezza, economia e diritto, che ci permette di realizzare un'analisi integrale.",
+    team_p2:'Gli analisti di Noesis Analysis apportano metodo, criterio e capacità di sintesi per trasformare informazioni rilevanti in decisioni strategiche.',
+    claim2:'Analizziamo per comprendere. Comprendiamo per decidere.',
     svc_title:'Servizi',
-    svc_sub:'Noesis Analysis offre soluzioni di intelligence applicata focalizzate sulla prevenzione dei rischi, il monitoraggio delle variabili critiche e la costruzione di scenari per il processo decisionale strategico e operativo.',
-    svc1_name:'Rischio Paese per Viaggi e Operazioni',
-    svc1_desc:"Valutazione della sicurezza, stabilità e scenari per la mobilità internazionale e le operazioni all'estero.",
-    svc2_name:'Intelligence Applicata nei Processi Elettorali e di Campagna',
+    svc_sub:'Consigliamo istituzioni, aziende, organizzazioni, team dirigenziali e decisori a comprendere contesti complessi e identificare variabili critiche. In Noesis Analysis offriamo i seguenti servizi:',
+    svc1_name:'Sicurezza Fisica e Digitale per Istituzioni e Aziende',
+    svc1_desc:'Valutazione di minacce e vulnerabilità in strutture, processi e personale, sia fisiche che digitali e informatiche.',
+    svc2_name:'Intelligence Applicata ai Processi Politici ed Elettorali',
     svc2_desc:'Monitoraggio politico, analisi degli attori, delle narrazioni e dei rischi.',
-    svc3_name:'Intelligence Applicata per la Sicurezza Istituzionale',
-    svc3_desc:'Valutazione delle minacce fisiche e delle vulnerabilità nelle organizzazioni.',
+    svc3_name:'Analisi del Rischio per Viaggi e Operazioni',
+    svc3_desc:"Valutazione della sicurezza per la mobilità internazionale e le operazioni all'estero.",
     contact_label:'Contattaci',contact_title:'Contattaci',
-    contact_sub:'Sentiti libero di contattarci in qualsiasi momento. Ti risponderemo a breve.',
+    contact_sub:'Se hai bisogno di valutare un rischio, analizzare uno scenario o preparare una decisione, scrivici.',
     form_name:'Nome',form_email:'Email',form_subject:'Oggetto',form_message:'Messaggio',form_send:'Invia Messaggio',
     ph_name:'Il tuo nome',ph_email:'tua@email.com',ph_subject:'Come possiamo aiutarti?',ph_message:'Raccontaci le tue esigenze...',
     ci_title:'Informazioni di Contatto',ci_phone_l:'Telefono',ci_email_l:'Email',ci_loc_l:'Posizione',
@@ -503,7 +581,7 @@ const i18n = {
     form_sending:'Invio in corso...',
     form_success:'Grazie. Il tuo messaggio è stato inviato con successo — ti risponderemo a breve.',
     form_error:'Si è verificato un errore. Riprova oppure scrivici direttamente via email.',
-    lang_label:'Italiano',lang_flag:'https://noesis-analysis.vercel.app/flags/it.png'
+    lang_label:'Italiano',lang_flag:'flags/it.png'
   }
 };
 
